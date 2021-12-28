@@ -45,3 +45,10 @@ Decode all base64-encoded payloads from JNDI exploit:
 ```
 select(.type == "exploit" and (.payload | contains("Base64"))) | .payload | sub(".*/Base64/"; "") | sub ("}$"; "") | @base64d
 ```
+
+## Docker
+
+```
+docker build -t log4pot .
+docker run -p 8080:8080 -v $PWD/log4shell:/honeypot/log4shell honeypot
+```
