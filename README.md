@@ -50,5 +50,5 @@ select(.type == "exploit" and (.payload | contains("Base64"))) | .payload | sub(
 
 ```
 docker build -t log4pot .
-docker run -p 8080:8080 -v $PWD/log4shell:/honeypot/log4shell honeypot
+docker run -p 8080:8080 -v $PWD/log4shell:/honeypot/log4shell log4pot
 ```
